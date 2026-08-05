@@ -3,156 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOTOSCAN TAB - Chẩn đoán xe máy chuyên nghiệp | DTDAuto</title>
-    <meta name="description" content="MOTOSCAN TAB - Thiết bị chẩn đoán và lập trình xe máy thông minh hàng đầu Việt Nam bởi DTDAuto">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>MOTOSCAN TAB WEB</title>
     <style>
-        :root {
-            /* Color Palette - Professional Dark Navy */
-            --bg-body: #0a0e17;
-            --bg-tablet: #0d1117;
-            --bg-screen: #0f1923;
-            --bg-sidebar: linear-gradient(180deg, #0a1628 0%, #061220 50%, #040d18 100%);
-            --bg-content: #111d2e;
-            --bg-card: linear-gradient(145deg, rgba(20, 40, 65, 0.8), rgba(12, 25, 45, 0.9));
-            --bg-card-hover: linear-gradient(145deg, rgba(30, 55, 85, 0.9), rgba(18, 35, 58, 0.95));
-            --bg-topbar: linear-gradient(180deg, #0d1a2d, #0a1525);
-            --bg-statusbar: #060e1a;
-
-            --accent-blue: #00a8ff;
-            --accent-cyan: #00d4ff;
-            --accent-orange: #ff8c00;
-            --accent-green: #00e676;
-            --accent-red: #ff3d57;
-            --accent-yellow: #ffd600;
-            --accent-purple: #a855f7;
-
-            --text-primary: #e8edf5;
-            --text-secondary: #8899b0;
-            --text-muted: #556680;
-            --text-accent: #00c8ff;
-
-            --border-subtle: rgba(255, 255, 255, 0.06);
-            --border-card: rgba(0, 168, 255, 0.15);
-            --border-active: rgba(0, 168, 255, 0.5);
-
-            --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4);
-            --shadow-card-hover: 0 8px 32px rgba(0, 120, 255, 0.2);
-            --shadow-glow: 0 0 20px rgba(0, 168, 255, 0.15);
-
-            --radius-sm: 6px;
-            --radius-md: 10px;
-            --radius-lg: 16px;
-            --radius-xl: 20px;
-
-            --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-smooth: 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            -webkit-tap-highlight-color: transparent;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            user-select: none;
         }
 
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--bg-body);
-            background-image:
-                radial-gradient(ellipse at 20% 50%, rgba(0, 80, 160, 0.08) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 20%, rgba(0, 120, 200, 0.05) 0%, transparent 50%);
+            background-color: #1e222b;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            user-select: none;
         }
 
-        /* ========== TABLET FRAME ========== */
+
+        /* Khung viền Tablet giả lập (Ảnh 1) */
         .tablet-frame {
-            width: 1040px;
-            height: 660px;
-            background: var(--bg-tablet);
-            border-radius: 28px;
-            padding: 14px;
-            box-shadow:
-                0 30px 80px rgba(0, 0, 0, 0.7),
-                0 0 0 1px rgba(255, 255, 255, 0.05),
-                inset 0 1px 0 rgba(255, 255, 255, 0.08);
-            border: 2px solid rgba(255, 255, 255, 0.04);
+            width: 980px;
+            height: 620px;
+            background-color: #15181c;
+            border-radius: 24px;
+            padding: 16px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), inset 0 0 10px rgba(255, 255, 255, 0.1);
+            border: 3px solid #2a2e3d;
             position: relative;
         }
 
-        .tablet-frame::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: 6px;
-            transform: translateY(-50%);
-            width: 3px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 2px;
-        }
 
         .screen {
             width: 100%;
             height: 100%;
-            background: var(--bg-screen);
-            border-radius: var(--radius-lg);
+            background-color: #dce7f0;
+            border-radius: 8px;
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.04);
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
         }
 
-        /* ========== TOP BAR ========== */
+
+        /* Thanh điều hướng phía trên */
         .top-bar {
-            height: 44px;
-            background: var(--bg-topbar);
-            border-bottom: 1px solid var(--border-subtle);
+            height: 38px;
+            background: linear-gradient(to bottom, #ffffff, #dbe4ee);
+            border-bottom: 1px solid #b0c0d0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 16px;
-            flex-shrink: 0;
+            padding: 0 15px;
         }
+
 
         .nav-controls {
             display: flex;
-            gap: 4px;
+            gap: 18px;
             align-items: center;
         }
+
 
         .nav-btn {
             background: none;
-            border: 1px solid transparent;
+            border: none;
             cursor: pointer;
-            color: var(--text-secondary);
+            color: #555;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 34px;
-            height: 34px;
-            border-radius: var(--radius-sm);
-            transition: all var(--transition-fast);
+            transition: color 0.15s;
         }
+
 
         .nav-btn:hover {
-            color: var(--text-primary);
-            background: rgba(255, 255, 255, 0.06);
-            border-color: var(--border-subtle);
+            color: #000;
         }
 
-        .nav-btn:active {
-            transform: scale(0.92);
-            background: rgba(0, 168, 255, 0.1);
-        }
 
         .nav-btn svg {
             width: 18px;
@@ -160,166 +91,86 @@
             fill: currentColor;
         }
 
-        .nav-separator {
-            width: 1px;
-            height: 20px;
-            background: var(--border-subtle);
-            margin: 0 6px;
-        }
-
-        .top-bar-right {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .connection-badge {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            padding: 4px 10px;
-            background: rgba(0, 230, 118, 0.1);
-            border: 1px solid rgba(0, 230, 118, 0.2);
-            border-radius: 20px;
-            font-size: 11px;
-            color: var(--accent-green);
-            font-weight: 600;
-        }
-
-        .connection-badge .pulse-dot {
-            width: 7px;
-            height: 7px;
-            background: var(--accent-green);
-            border-radius: 50%;
-            animation: pulse 2s ease-in-out infinite;
-            box-shadow: 0 0 8px rgba(0, 230, 118, 0.5);
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.6; transform: scale(0.85); }
-        }
 
         .version-tag {
-            color: var(--accent-orange);
-            font-weight: 700;
-            font-size: 13px;
-            letter-spacing: 0.5px;
-            font-family: 'JetBrains Mono', monospace;
+            color: #e63946;
+            font-weight: bold;
+            font-size: 15px;
+            font-style: italic;
         }
 
-        /* ========== MAIN CONTAINER ========== */
+
+        /* Thân giao diện chính */
         .app-container {
             display: flex;
             flex: 1;
             overflow: hidden;
         }
 
-        /* ========== SIDEBAR ========== */
+
+        /* Sidebar Menu bên trái */
         .sidebar {
-            width: 230px;
-            background: var(--bg-sidebar);
+            width: 250px;
+            background: linear-gradient(to bottom, #093c60, #062740);
             color: white;
             display: flex;
             flex-direction: column;
-            border-right: 1px solid var(--border-subtle);
-            flex-shrink: 0;
+            border-right: 2px solid #041b2d;
         }
+
 
         .brand {
-            padding: 20px 16px 16px;
+            padding: 15px 12px 10px;
             text-align: center;
-            border-bottom: 1px solid var(--border-subtle);
-            position: relative;
+            font-weight: 800;
+            font-size: 20px;
+            letter-spacing: 1px;
+            color: #38b6ff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        .brand-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 3px;
-            margin-bottom: 2px;
-        }
 
-        .brand-name {
-            font-weight: 900;
-            font-size: 22px;
-            letter-spacing: 2px;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: none;
-        }
-
-        .brand-sub {
+        .brand span {
+            color: #ff9f1c;
             font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 4px;
-            color: var(--accent-orange);
-            text-transform: uppercase;
+            display: block;
+            font-weight: 600;
+            margin-top: -2px;
         }
 
-        .brand::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
-            opacity: 0.4;
-        }
 
         .menu-list {
             list-style: none;
-            padding: 8px 0;
-            flex: 1;
-            overflow-y: auto;
+            margin-top: 5px;
         }
 
+
         .menu-item {
-            padding: 11px 16px;
-            font-size: 12.5px;
-            font-weight: 500;
+            padding: 12px 15px;
+            font-size: 13px;
             display: flex;
             align-items: center;
             gap: 10px;
             cursor: pointer;
-            color: var(--text-secondary);
-            transition: all var(--transition-normal);
-            position: relative;
-            margin: 2px 8px;
-            border-radius: var(--radius-sm);
-            letter-spacing: 0.2px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: background 0.2s, color 0.2s;
+            color: #d1e5f4;
         }
+
 
         .menu-item:hover {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-primary);
+            background-color: rgba(255,255,255,0.12);
+            color: #ffffff;
         }
+
 
         .menu-item.active {
-            background: linear-gradient(135deg, rgba(0, 168, 255, 0.2), rgba(0, 100, 200, 0.15));
-            color: var(--accent-cyan);
-            font-weight: 600;
-            border: 1px solid rgba(0, 168, 255, 0.2);
-            box-shadow: 0 0 16px rgba(0, 168, 255, 0.08);
+            background: linear-gradient(to right, #0077b6, #0096c7);
+            color: #ffffff;
+            font-weight: bold;
         }
 
-        .menu-item.active::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 3px;
-            height: 60%;
-            background: var(--accent-cyan);
-            border-radius: 0 3px 3px 0;
-            box-shadow: 0 0 8px var(--accent-cyan);
-        }
 
         .menu-item .icon {
             width: 20px;
@@ -327,8 +178,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
         }
+
 
         .menu-item .icon svg {
             width: 18px;
@@ -336,85 +187,25 @@
             fill: currentColor;
         }
 
+
         .sidebar-footer {
             margin-top: auto;
-            padding: 12px 16px;
+            padding: 10px;
             font-size: 10px;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-subtle);
+            color: #72a1c4;
+            border-top: 1px solid rgba(255,255,255,0.1);
             text-align: center;
-            line-height: 1.5;
         }
 
-        .sidebar-footer b {
-            color: var(--text-secondary);
-            font-weight: 600;
-        }
 
-        /* ========== CONTENT AREA ========== */
+        /* Lưới hiển thị các Chức năng / Hãng xe / Mẫu xe */
         .content-area {
             flex: 1;
-            padding: 20px;
+            padding: 16px;
             overflow-y: auto;
-            background: var(--bg-content);
-            background-image:
-                radial-gradient(ellipse at 30% 0%, rgba(0, 100, 200, 0.04) 0%, transparent 50%),
-                radial-gradient(ellipse at 70% 100%, rgba(0, 80, 160, 0.03) 0%, transparent 50%);
+            background-color: #e9f1f7;
         }
 
-        .content-area::-webkit-scrollbar {
-            width: 5px;
-        }
-
-        .content-area::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .content-area::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-        }
-
-        .content-area::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .content-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 16px;
-        }
-
-        .content-title {
-            font-size: 15px;
-            font-weight: 700;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .content-title .title-icon {
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-blue);
-        }
-
-        .content-title .title-icon svg {
-            width: 18px;
-            height: 18px;
-            fill: currentColor;
-        }
-
-        .content-subtitle {
-            font-size: 11px;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
 
         .grid-layout {
             display: grid;
@@ -422,132 +213,75 @@
             gap: 14px;
         }
 
-        /* ========== CARDS ========== */
+
+        /* Style từng ô Thẻ (Card) */
         .card {
-            background: var(--bg-card);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-card);
-            box-shadow: var(--shadow-card);
-            padding: 16px 12px;
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #b8cae0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+            padding: 15px 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: all var(--transition-smooth);
-            height: 145px;
+            transition: all 0.15s ease-in-out;
+            height: 140px;
             text-align: center;
             position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
         }
 
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(0, 168, 255, 0.3), transparent);
-            opacity: 0;
-            transition: opacity var(--transition-normal);
-        }
-
-        .card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 50% 0%, rgba(0, 168, 255, 0.08) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity var(--transition-normal);
-        }
 
         .card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-card-hover);
-            border-color: var(--border-active);
-            background: var(--bg-card-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+            border-color: #0077b6;
         }
 
-        .card:hover::before {
-            opacity: 1;
-        }
-
-        .card:hover::after {
-            opacity: 1;
-        }
 
         .card:active {
-            transform: translateY(-1px) scale(0.98);
-            transition-duration: 0.08s;
+            transform: translateY(0);
+            background-color: #f0f7ff;
         }
 
+
         .card-icon {
-            width: 54px;
-            height: 54px;
-            margin-bottom: 10px;
+            width: 60px;
+            height: 60px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            z-index: 1;
         }
+
 
         .card-icon svg {
             width: 100%;
             height: 100%;
-            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
         }
+
 
         .card-title {
-            font-size: 12px;
-            color: var(--text-primary);
+            font-size: 13px;
+            color: #1a2b3c;
             font-weight: 600;
-            line-height: 1.35;
-            position: relative;
-            z-index: 1;
-            letter-spacing: 0.1px;
+            line-height: 1.3;
         }
 
-        /* Card animation stagger */
-        .card {
-            animation: cardEnter 0.4s ease-out backwards;
-        }
 
-        @keyframes cardEnter {
-            from {
-                opacity: 0;
-                transform: translateY(16px) scale(0.96);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        /* ========== STATUS BAR ========== */
+        /* Thanh Trạng thái Footer */
         .status-bar {
-            height: 28px;
-            background: var(--bg-statusbar);
-            color: var(--text-muted);
+            height: 24px;
+            background-color: #062740;
+            color: #90e0ef;
             font-size: 11px;
-            font-weight: 500;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 16px;
-            border-top: 1px solid var(--border-subtle);
-            flex-shrink: 0;
-            font-family: 'JetBrains Mono', monospace;
+            padding: 0 12px;
         }
 
-        .status-left {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
 
         .status-indicator {
             display: flex;
@@ -555,420 +289,230 @@
             gap: 6px;
         }
 
-        .status-dot {
-            width: 6px;
-            height: 6px;
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #2ecc71;
             border-radius: 50%;
             display: inline-block;
+            box-shadow: 0 0 6px #2ecc71;
         }
 
-        .status-dot.green {
-            background: var(--accent-green);
-            box-shadow: 0 0 8px rgba(0, 230, 118, 0.5);
-        }
 
-        .status-dot.blue {
-            background: var(--accent-blue);
-            box-shadow: 0 0 8px rgba(0, 168, 255, 0.5);
-        }
-
-        .status-right {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            color: var(--text-muted);
-        }
-
-        .status-right span {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        /* ========== LOG OVERLAY ========== */
+        /* Popup Log Giả lập Sự kiện */
         #log-overlay {
             position: absolute;
-            bottom: 45px;
+            bottom: 35px;
             right: 25px;
-            background: rgba(6, 14, 26, 0.95);
-            color: var(--accent-green);
-            padding: 10px 16px;
-            border-radius: var(--radius-md);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 11px;
+            background: rgba(0, 0, 0, 0.85);
+            color: #00ff66;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 12px;
             display: none;
             z-index: 100;
-            border: 1px solid rgba(0, 230, 118, 0.2);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(12px);
-            max-width: 360px;
-        }
-
-        #log-overlay::before {
-            content: '>';
-            margin-right: 6px;
-            color: var(--accent-cyan);
-            font-weight: 700;
-        }
-
-        /* ========== BREADCRUMB ========== */
-        .breadcrumb {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-bottom: 14px;
-            font-size: 11px;
-            color: var(--text-muted);
-        }
-
-        .breadcrumb-item {
-            cursor: pointer;
-            transition: color var(--transition-fast);
-        }
-
-        .breadcrumb-item:hover {
-            color: var(--accent-blue);
-        }
-
-        .breadcrumb-item.current {
-            color: var(--text-secondary);
-            font-weight: 600;
-        }
-
-        .breadcrumb-separator {
-            color: var(--text-muted);
-            font-size: 10px;
-        }
-
-        /* ========== RESPONSIVE ========== */
-        @media (max-width: 1080px) {
-            .tablet-frame {
-                width: 95vw;
-                height: auto;
-                aspect-ratio: 16 / 10;
-            }
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 8px;
-            }
-            .tablet-frame {
-                width: 100%;
-                height: auto;
-                min-height: 500px;
-                border-radius: 16px;
-                padding: 8px;
-            }
-            .sidebar {
-                width: 180px;
-            }
-            .grid-layout {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-            .card {
-                height: 120px;
-            }
+            border: 1px solid #00ff66;
         }
     </style>
 </head>
 <body>
+
 
     <div class="tablet-frame">
         <div class="screen">
             <!-- Top Navigation Bar -->
             <div class="top-bar">
                 <div class="nav-controls">
-                    <button class="nav-btn" onclick="goBack()" title="Quay lại" id="btn-back">
+                    <button class="nav-btn" onclick="goHome()" title="Trang chủ">
                         <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
                     </button>
-                    <button class="nav-btn" onclick="goHome()" title="Trang chủ" id="btn-home">
+                    <button class="nav-btn" onclick="goHome()" title="Home">
                         <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
                     </button>
-                    <div class="nav-separator"></div>
-                    <button class="nav-btn" onclick="triggerAction('Chụp màn hình')" title="Chụp màn hình" id="btn-screenshot">
+                    <button class="nav-btn" onclick="triggerAction('Lưu ảnh')" title="Chụp màn hình">
                         <svg viewBox="0 0 24 24"><path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
                     </button>
-                    <button class="nav-btn" onclick="triggerAction('Cài đặt')" title="Cài đặt" id="btn-settings">
+                    <button class="nav-btn" onclick="triggerAction('Cài đặt')" title="Cài đặt">
                         <svg viewBox="0 0 24 24"><path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>
                     </button>
-                    <button class="nav-btn" onclick="triggerAction('In dữ liệu')" title="In dữ liệu" id="btn-print">
+                    <button class="nav-btn" onclick="triggerAction('In')" title="In dữ liệu">
                         <svg viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
                     </button>
                 </div>
-                <div class="top-bar-right">
-                    <div class="connection-badge">
-                        <span class="pulse-dot"></span>
-                        <span>Bluetooth</span>
-                    </div>
-                    <div class="version-tag">V2.2</div>
-                </div>
+                <div class="version-tag">V2.2</div>
             </div>
+
 
             <!-- Main Application View -->
             <div class="app-container">
                 <!-- Sidebar Left -->
                 <aside class="sidebar">
                     <div class="brand">
-                        <div class="brand-logo">
-                            <span class="brand-name">MOTOSCAN</span>
-                        </div>
-                        <div class="brand-sub">TAB</div>
+                        MOTOSCAN
+                        <span>TAB</span>
                     </div>
                     <ul class="menu-list">
-                        <li class="menu-item active" onclick="loadView('chanDoan', this)" id="menu-chandoan">
-                            <span class="icon"><svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.95s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg></span>
-                            Chẩn đoán, lập trình
+                        <li class="menu-item active" onclick="loadView('chanDoan', this)">
+                            <span class="icon"><svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.95s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg></span> Chẩn đoán, lập trình
                         </li>
-                        <li class="menu-item" onclick="loadView('thaoTac', this)" id="menu-thaotac">
-                            <span class="icon"><svg viewBox="0 0 24 24"><path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></svg></span>
-                            Thao tác gần nhất
+                        <li class="menu-item" onclick="loadView('thaoTac', this)">
+                            <span class="icon"><svg viewBox="0 0 24 24"><path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></svg></span> Thao tác gần nhất ...
                         </li>
-                        <li class="menu-item" onclick="loadView('traCuu', this)" id="menu-tracuu">
-                            <span class="icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></span>
-                            Tra cứu & tính toán
+                        <li class="menu-item" onclick="loadView('traCuu', this)">
+                            <span class="icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></span> Tra cứu và tính toán
                         </li>
-                        <li class="menu-item" onclick="loadView('thongTin', this)" id="menu-thongtin">
-                            <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></span>
-                            Thông tin sản phẩm
+                        <li class="menu-item" onclick="loadView('thongTin', this)">
+                            <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></span> Thông tin sản phẩm
                         </li>
-                        <li class="menu-item" onclick="loadView('nhaSanXuat', this)" id="menu-nhasanxuat">
-                            <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg></span>
-                            Nhà sản xuất
+                        <li class="menu-item" onclick="loadView('nhaSanXuat', this)">
+                            <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg></span> Nhà sản xuất
                         </li>
-                        <li class="menu-item" onclick="loadView('ngonNgu', this)" id="menu-ngonngu">
-                            <span class="icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg></span>
-                            Language | Ngôn ngữ
+                        <li class="menu-item" onclick="loadView('ngonNgu', this)">
+                            <span class="icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg></span> Language | Ngôn ngữ
                         </li>
                     </ul>
                     <div class="sidebar-footer">
-                        <b>DTDAuto</b> © Copyright DTDAUTO Vietnam
+                        <b>DTDAuto</b> Copyright © DTDAUTO
                     </div>
                 </aside>
 
+
                 <!-- Dynamic Grid Content -->
                 <main class="content-area">
-                    <div id="contentHeader"></div>
                     <div class="grid-layout" id="gridContent">
-                        <!-- Nội dung được tải bằng JavaScript -->
+                        <!-- Nối nội dung bằng JavaScript -->
                     </div>
                 </main>
             </div>
 
+
             <!-- Footer Status Bar -->
             <div class="status-bar">
-                <div class="status-left">
-                    <div class="status-indicator">
-                        <span class="status-dot green"></span>
-                        <span>Kết nối OK</span>
-                    </div>
-                    <div class="status-indicator">
-                        <span class="status-dot blue"></span>
-                        <span>BT: Paired</span>
-                    </div>
+                <div class="status-indicator">
+                    <span class="dot"></span>
+                    <span>Kết nối thành công!</span>
                 </div>
-                <div class="status-right">
-                    <span>P/N: MTR080421010-4</span>
-                    <span id="clock"></span>
-                </div>
+                <div>P/N: MTR080421010-4</div>
             </div>
         </div>
 
-        <!-- Tooltip log -->
+
+        <!-- Tooltip log để kiểm tra sự kiện click -->
         <div id="log-overlay">Action Log</div>
     </div>
 
+
     <script>
-        // ========== SVG ICONS ==========
+        // Kho lưu trữ các Icon SVG chuẩn giao diện máy scan xe máy Honda (MOTOSCAN TAB)
         const SVG_ICONS = {
-            // Chức năng chẩn đoán
-            obd_conn: `<svg viewBox="0 0 64 64"><defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00d4ff"/><stop offset="100%" stop-color="#0077b6"/></linearGradient></defs><rect x="14" y="28" width="36" height="22" rx="4" fill="url(#g1)" opacity="0.9"/><rect x="20" y="22" width="5" height="6" rx="1" fill="#00a8ff"/><rect x="29.5" y="22" width="5" height="6" rx="1" fill="#00a8ff"/><rect x="39" y="22" width="5" height="6" rx="1" fill="#00a8ff"/><path fill="none" stroke="#00e5ff" stroke-width="2.5" stroke-linecap="round" d="M22 16c3-4 8-6 10-6s7 2 10 6"/><path fill="none" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" opacity="0.5" d="M26 12c2-3 4-4 6-4s4 1 6 4"/><circle cx="32" cy="39" r="5" fill="none" stroke="#fff" stroke-width="2"/><path fill="#fff" d="M32 36v4l3 2" stroke="#fff" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>`,
+            // 1. Kết nối OBD xe máy
+            obd_conn: `<svg viewBox="0 0 64 64"><path fill="#f39c12" d="M12 40h40v12H12z"/><rect x="18" y="34" width="6" height="6" fill="#d35400"/><rect x="40" y="34" width="6" height="6" fill="#d35400"/><path fill="none" stroke="#2c3e50" stroke-width="3" stroke-linecap="round" d="M16 26c4-6 10-8 16-8s12 2 16 8M20 22l-6-6M44 22l6-6"/><circle cx="32" cy="18" r="6" fill="#e74c3c"/></svg>`,
+           
+            // 2. Giả lập và mô phỏng tín hiệu (Sóng xung)
+            signal_sim: `<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" fill="none" stroke="#e67e22" stroke-width="4"/><path fill="none" stroke="#2980b9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M14 32h6l4-12 8 24 8-20 4 8h6"/></svg>`,
+           
+            // 3. Kiểm tra ắc quy
+            battery_check: `<svg viewBox="0 0 64 64"><rect x="10" y="20" width="44" height="32" rx="4" fill="#e67e22"/><rect x="18" y="14" width="8" height="6" fill="#d35400"/><rect x="38" y="14" width="8" height="6" fill="#d35400"/><path stroke="#fff" stroke-width="4" stroke-linecap="round" d="M18 36h10M36 36h10M41 31v10"/></svg>`,
+           
+            // 4. Phát điện & Nạp điện
+            power_gen: `<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" fill="none" stroke="#2980b9" stroke-width="4"/><path fill="#f1c40f" stroke="#d35400" stroke-width="2" d="M34 10L18 34h12l-4 20 20-26H32z"/></svg>`,
+           
+            // 5. ECU & Cảm biến
+            ecu_sensor: `<svg viewBox="0 0 64 64"><rect x="12" y="18" width="40" height="28" rx="4" fill="#003366"/><text x="32" y="36" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">ECU</text><path stroke="#003366" stroke-width="3" stroke-linecap="round" d="M20 12v6M32 12v6M44 12v6M20 46v6M32 46v6M44 46v6"/></svg>`,
+           
+            // 6. Lập trình tự động (Icon A xoay tròn)
+            auto_prog: `<svg viewBox="0 0 64 64"><path fill="none" stroke="#2980b9" stroke-width="4" stroke-linecap="round" d="M52 32A20 20 0 1 1 32 12"/><path fill="#2980b9" d="M32 4l8 8-8 8z"/><text x="31" y="41" fill="#003366" font-size="22" font-weight="900" text-anchor="middle">A</text></svg>`,
+           
+            // 7. Đo trực tiếp tốc độ động cơ RPM / ABS / HSTC
+            rpm_abs: `<svg viewBox="0 0 64 64"><path fill="none" stroke="#e67e22" stroke-width="4" stroke-linecap="round" d="M12 44a22 22 0 1 1 40 0"/><path stroke="#e74c3c" stroke-width="4" stroke-linecap="round" d="M32 36l12-16"/><circle cx="32" cy="36" r="4" fill="#2c3e50"/></svg>`,
 
-            signal_sim: `<svg viewBox="0 0 64 64"><defs><linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ff8c00"/><stop offset="100%" stop-color="#ff5722"/></linearGradient></defs><circle cx="32" cy="32" r="26" fill="none" stroke="url(#g2)" stroke-width="3" opacity="0.3"/><circle cx="32" cy="32" r="20" fill="none" stroke="url(#g2)" stroke-width="2" opacity="0.15"/><path fill="none" stroke="#00e676" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M10 32h8l4-14 8 28 8-22 4 8h12"/></svg>`,
-
-            battery_check: `<svg viewBox="0 0 64 64"><defs><linearGradient id="g3" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ffd600"/><stop offset="100%" stop-color="#ff8c00"/></linearGradient></defs><rect x="12" y="22" width="40" height="28" rx="5" fill="url(#g3)" opacity="0.9"/><rect x="20" y="16" width="7" height="6" rx="1.5" fill="#ffab00"/><rect x="37" y="16" width="7" height="6" rx="1.5" fill="#ffab00"/><path stroke="#fff" stroke-width="3.5" stroke-linecap="round" d="M20 36h8M36 36h8M40 32v8"/><rect x="12" y="22" width="40" height="28" rx="5" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/></svg>`,
-
-            power_gen: `<svg viewBox="0 0 64 64"><defs><linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00d4ff"/><stop offset="100%" stop-color="#0066cc"/></linearGradient></defs><circle cx="32" cy="32" r="24" fill="none" stroke="url(#g4)" stroke-width="3"/><circle cx="32" cy="32" r="18" fill="none" stroke="url(#g4)" stroke-width="1.5" opacity="0.3"/><path fill="#ffd600" d="M35 12L20 34h10l-3 18 18-24H34z" opacity="0.95"/></svg>`,
-
-            ecu_sensor: `<svg viewBox="0 0 64 64"><defs><linearGradient id="g5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1a3a5c"/><stop offset="100%" stop-color="#0d2137"/></linearGradient></defs><rect x="14" y="18" width="36" height="28" rx="4" fill="url(#g5)" stroke="#00a8ff" stroke-width="1.5"/><text x="32" y="36" fill="#00d4ff" font-size="12" font-weight="bold" text-anchor="middle" font-family="Inter,sans-serif">ECU</text><path stroke="#00a8ff" stroke-width="2" stroke-linecap="round" d="M22 14v4M32 14v4M42 14v4M22 46v4M32 46v4M42 46v4"/><circle cx="20" cy="24" r="1.5" fill="#00e676"/><circle cx="44" cy="24" r="1.5" fill="#ff3d57"/></svg>`,
-
-            auto_prog: `<svg viewBox="0 0 64 64"><path fill="none" stroke="#00a8ff" stroke-width="3" stroke-linecap="round" d="M50 32A18 18 0 1 1 32 14"/><path fill="#00a8ff" d="M32 6l7 8-7 8z" opacity="0.9"/><text x="32" y="41" fill="#00d4ff" font-size="18" font-weight="900" text-anchor="middle" font-family="Inter,sans-serif">A</text></svg>`,
-
-            rpm_abs: `<svg viewBox="0 0 64 64"><defs><linearGradient id="g6" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ff8c00"/><stop offset="100%" stop-color="#ff5722"/></linearGradient></defs><path fill="none" stroke="url(#g6)" stroke-width="3.5" stroke-linecap="round" d="M10 46a24 24 0 1 1 44 0"/><path stroke="#ff3d57" stroke-width="3" stroke-linecap="round" d="M32 36l10-14"/><circle cx="32" cy="36" r="4" fill="#1a2a40" stroke="#ff3d57" stroke-width="2"/><text x="32" y="54" fill="#ff8c00" font-size="8" font-weight="bold" text-anchor="middle" font-family="Inter,sans-serif">RPM</text></svg>`,
-
-            smartkey: `<svg viewBox="0 0 64 64"><defs><linearGradient id="gsk" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#a855f7"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs><circle cx="24" cy="28" r="12" fill="none" stroke="url(#gsk)" stroke-width="3"/><circle cx="24" cy="28" r="5" fill="url(#gsk)" opacity="0.5"/><path stroke="url(#gsk)" stroke-width="3" stroke-linecap="round" d="M34 28h16"/><path stroke="url(#gsk)" stroke-width="3" stroke-linecap="round" d="M44 28v6M50 28v6"/></svg>`,
-
-            odo: `<svg viewBox="0 0 64 64"><rect x="10" y="20" width="44" height="24" rx="5" fill="none" stroke="#00d4ff" stroke-width="2.5"/><text x="32" y="37" fill="#00d4ff" font-size="14" font-weight="bold" text-anchor="middle" font-family="JetBrains Mono,monospace">00000</text><path stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round" d="M10 30h44" opacity="0.3"/></svg>`,
-
-            ecu_tuner: `<svg viewBox="0 0 64 64"><rect x="14" y="14" width="36" height="36" rx="6" fill="none" stroke="#00e676" stroke-width="2.5"/><path fill="none" stroke="#00e676" stroke-width="2" stroke-linecap="round" d="M22 40V28M32 40V22M42 40V32"/><circle cx="22" cy="28" r="3" fill="#00e676" opacity="0.8"/><circle cx="32" cy="22" r="3" fill="#00e676" opacity="0.8"/><circle cx="42" cy="32" r="3" fill="#00e676" opacity="0.8"/></svg>`,
 
             // LOGO CÁC HÃNG XE
-            honda: `<svg viewBox="0 0 64 64"><rect x="6" y="14" width="52" height="36" rx="6" fill="#cc0000"/><text x="32" y="38" fill="#ffffff" font-size="15" font-weight="900" text-anchor="middle" letter-spacing="2" font-family="Inter,sans-serif">HONDA</text></svg>`,
+            honda: `<svg viewBox="0 0 64 64"><path fill="#cc0000" d="M8 20c12 2 20-8 48-12-14 12-24 16-36 18 10 2 20-2 30-6-14 10-24 14-42 16 12 4 22 2 34-2-18 10-28 12-34 16h40c-2 4-20 6-40 6 24 0 46-6 50-20V12L8 20z"/></svg>`,
+            yamaha: `<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" fill="none" stroke="#cc0000" stroke-width="4"/><path fill="#cc0000" d="M32 12v20M20 20l12 12M44 20L32 32M32 32v18M20 44l12-12M44 44L32 32"/></svg>`,
+            piaggio: `<svg viewBox="0 0 64 64"><path fill="#0055a5" d="M32 6L10 20v24l22 14 22-14V20L32 6zm0 10l12 8v16l-12 8-12-8V24l12-8z"/></svg>`,
+            sym: `<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" fill="#cc0000"/><text x="32" y="38" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">SYM</text></svg>`,
+            kymco: `<svg viewBox="0 0 64 64"><ellipse cx="32" cy="32" rx="28" ry="18" fill="none" stroke="#cc0000" stroke-width="4"/><path fill="#cc0000" d="M18 24l12 8-12 8M32 24l12 8-12 8"/></svg>`,
 
-            yamaha: `<svg viewBox="0 0 64 64"><rect x="6" y="14" width="52" height="36" rx="6" fill="#1a1a6e"/><text x="32" y="38" fill="#ffffff" font-size="13" font-weight="900" text-anchor="middle" letter-spacing="2" font-family="Inter,sans-serif">YAMAHA</text></svg>`,
-
-            piaggio: `<svg viewBox="0 0 64 64"><rect x="6" y="14" width="52" height="36" rx="6" fill="#005ca9"/><text x="32" y="38" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="1" font-family="Inter,sans-serif">PIAGGIO</text></svg>`,
-
-            sym: `<svg viewBox="0 0 64 64"><rect x="6" y="14" width="52" height="36" rx="6" fill="#b71c1c"/><text x="32" y="38" fill="#ffffff" font-size="16" font-weight="900" text-anchor="middle" letter-spacing="3" font-family="Inter,sans-serif">SYM</text></svg>`,
-
-            kymco: `<svg viewBox="0 0 64 64"><rect x="6" y="14" width="52" height="36" rx="6" fill="#d32f2f"/><text x="32" y="38" fill="#ffffff" font-size="13" font-weight="900" text-anchor="middle" letter-spacing="2" font-family="Inter,sans-serif">KYMCO</text></svg>`,
-
-            suzuki: `<svg viewBox="0 0 64 64"><rect x="6" y="14" width="52" height="36" rx="6" fill="#0d47a1"/><text x="32" y="38" fill="#ffffff" font-size="12" font-weight="900" text-anchor="middle" letter-spacing="2" font-family="Inter,sans-serif">SUZUKI</text></svg>`,
 
             // CỜ NGÔN NGỮ
-            lang_vi: `<svg viewBox="0 0 64 44"><rect width="64" height="44" rx="4" fill="#da251d"/><polygon fill="#ffff00" points="32,8 36,20 48,20 38,28 42,40 32,32 22,40 26,28 16,20 28,20"/></svg>`,
-            lang_en: `<svg viewBox="0 0 64 44"><rect width="64" height="44" rx="4" fill="#012169"/><path d="M0 0l64 44M64 0L0 44" stroke="#fff" stroke-width="6"/><path d="M0 0l64 44M64 0L0 44" stroke="#C8102E" stroke-width="3"/><path d="M32 0v44M0 22h64" stroke="#fff" stroke-width="10"/><path d="M32 0v44M0 22h64" stroke="#C8102E" stroke-width="6"/></svg>`,
-            lang_fr: `<svg viewBox="0 0 64 44"><rect width="21.3" height="44" rx="0" fill="#002395"/><rect x="21.3" width="21.3" height="44" fill="#fff"/><rect x="42.6" width="21.4" height="44" fill="#ED2939"/><rect width="64" height="44" rx="4" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></svg>`,
-            lang_id: `<svg viewBox="0 0 64 44"><rect width="64" height="22" rx="4" fill="#ff0000"/><rect y="22" width="64" height="22" fill="#fff"/><rect width="64" height="44" rx="4" fill="none" stroke="rgba(0,0,0,0.1)" stroke-width="1"/></svg>`,
-            lang_km: `<svg viewBox="0 0 64 44"><rect width="64" height="11" fill="#032ea1"/><rect y="11" width="64" height="22" fill="#e61c24"/><rect y="33" width="64" height="11" fill="#032ea1"/><rect width="64" height="44" rx="4" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></svg>`,
-            lang_ko: `<svg viewBox="0 0 64 44"><rect width="64" height="44" rx="4" fill="#fff"/><circle cx="32" cy="22" r="10" fill="#c60c30"/><path d="M22 22a10 10 0 0 0 20 0" fill="#003478"/></svg>`,
+            lang_vi: `<svg viewBox="0 0 64 44"><rect width="64" height="44" fill="#da251d"/><polygon fill="#ffff00" points="32,8 36,20 48,20 38,28 42,40 32,32 22,40 26,28 16,20 28,20"/></svg>`,
+            lang_en: `<svg viewBox="0 0 64 44"><rect width="64" height="44" fill="#012169"/><path d="M0 0l64 44M64 0L0 44" stroke="#fff" stroke-width="6"/><path d="M0 0l64 44M64 0L0 44" stroke="#C8102E" stroke-width="3"/><path d="M32 0v44M0 22h64" stroke="#fff" stroke-width="10"/><path d="M32 0v44M0 22h64" stroke="#C8102E" stroke-width="6"/></svg>`,
+            lang_fr: `<svg viewBox="0 0 64 44"><rect width="21.3" height="44" fill="#002395"/><rect x="21.3" width="21.3" height="44" fill="#fff"/><rect x="42.6" width="21.4" height="44" fill="#ED2939"/></svg>`,
+            lang_id: `<svg viewBox="0 0 64 44"><rect width="64" height="22" fill="#ff0000"/><rect y="22" width="64" height="22" fill="#fff"/></svg>`,
+            lang_km: `<svg viewBox="0 0 64 44"><rect width="64" height="11" fill="#032ea1"/><rect y="11" width="64" height="22" fill="#e61c24"/><rect y="33" width="64" height="11" fill="#032ea1"/></svg>`,
+            lang_ko: `<svg viewBox="0 0 64 44"><rect width="64" height="44" fill="#fff"/><circle cx="32" cy="22" r="10" fill="#c60c30"/></svg>`,
             lang_la: `<svg viewBox="0 0 64 44"><rect width="64" height="11" fill="#ce1126"/><rect y="11" width="64" height="22" fill="#002b7f"/><rect y="33" width="64" height="11" fill="#ce1126"/><circle cx="32" cy="22" r="7" fill="#fff"/></svg>`,
-            lang_ms: `<svg viewBox="0 0 64 44"><rect width="64" height="44" rx="4" fill="#010066"/><rect y="0" width="64" height="6.3" fill="#cc0000"/><rect y="6.3" width="64" height="6.3" fill="#fff"/><rect y="12.6" width="64" height="6.3" fill="#cc0000"/><rect y="18.9" width="64" height="6.3" fill="#fff"/><rect y="25.2" width="64" height="6.3" fill="#cc0000"/><rect y="31.5" width="64" height="6.3" fill="#fff"/><rect y="37.8" width="64" height="6.2" fill="#cc0000"/></svg>`,
+            lang_ms: `<svg viewBox="0 0 64 44"><rect width="64" height="44" fill="#cc0000"/><rect y="6" width="64" height="6" fill="#fff"/><rect y="18" width="64" height="6" fill="#fff"/><rect y="30" width="64" height="6" fill="#fff"/></svg>`,
+
 
             // MẪU XE HONDA
-            scooter: `<svg viewBox="0 0 64 64"><defs><linearGradient id="gs" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00a8ff"/><stop offset="100%" stop-color="#0066cc"/></linearGradient></defs><circle cx="14" cy="46" r="7" fill="none" stroke="url(#gs)" stroke-width="2.5"/><circle cx="50" cy="46" r="7" fill="none" stroke="url(#gs)" stroke-width="2.5"/><circle cx="14" cy="46" r="2" fill="#00a8ff"/><circle cx="50" cy="46" r="2" fill="#00a8ff"/><path fill="none" stroke="url(#gs)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M20 42h10l6-14h8l4 14M24 28l-4-8h-6"/><path fill="url(#gs)" opacity="0.2" d="M22 42h18l4-12H28z"/></svg>`,
-
-            // Tra cứu
-            lookup: `<svg viewBox="0 0 64 64"><circle cx="28" cy="28" r="16" fill="none" stroke="#00d4ff" stroke-width="3"/><path stroke="#00d4ff" stroke-width="3" stroke-linecap="round" d="M40 40l12 12"/><circle cx="28" cy="28" r="8" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.3"/></svg>`,
-
-            calculator: `<svg viewBox="0 0 64 64"><rect x="14" y="10" width="36" height="44" rx="5" fill="none" stroke="#ff8c00" stroke-width="2.5"/><rect x="18" y="16" width="28" height="12" rx="3" fill="#ff8c00" opacity="0.2"/><circle cx="23" cy="36" r="2.5" fill="#ff8c00"/><circle cx="32" cy="36" r="2.5" fill="#ff8c00"/><circle cx="41" cy="36" r="2.5" fill="#ff8c00"/><circle cx="23" cy="45" r="2.5" fill="#ff8c00"/><circle cx="32" cy="45" r="2.5" fill="#ff8c00"/><circle cx="41" cy="45" r="2.5" fill="#ff8c00"/></svg>`,
-
-            wiring: `<svg viewBox="0 0 64 64"><path fill="none" stroke="#a855f7" stroke-width="2.5" stroke-linecap="round" d="M12 20h10c4 0 6 4 6 8s-2 8-6 8h-2c-4 0-6 4-6 8s2 8 6 8h20"/><circle cx="12" cy="20" r="3" fill="#a855f7"/><circle cx="52" cy="52" r="3" fill="#a855f7"/><path fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" opacity="0.4" d="M32 16h12M32 24h16M32 48h8"/></svg>`,
-
-            // Thông tin
-            info: `<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="24" fill="none" stroke="#00a8ff" stroke-width="3"/><text x="32" y="26" fill="#00a8ff" font-size="20" font-weight="900" text-anchor="middle" font-family="Inter,sans-serif">i</text><rect x="29" y="30" width="6" height="16" rx="2" fill="#00a8ff"/></svg>`,
-
-            manual: `<svg viewBox="0 0 64 64"><path d="M14 10h16c4 0 4 2 4 4v36c0-2-2-4-4-4H14z" fill="none" stroke="#00d4ff" stroke-width="2.5"/><path d="M50 10H34c-4 0-4 2-4 4v36c0-2 2-4 4-4h16z" fill="none" stroke="#00d4ff" stroke-width="2.5"/><path stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round" opacity="0.4" d="M18 20h8M18 26h8M18 32h8M38 20h8M38 26h8M38 32h8"/></svg>`,
-
-            update: `<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="22" fill="none" stroke="#00e676" stroke-width="2.5"/><path fill="#00e676" d="M32 18v16l-8 8h16l-8-8z" opacity="0.8"/><path fill="none" stroke="#00e676" stroke-width="2.5" stroke-linecap="round" d="M24 44h16"/></svg>`
+            scooter: `<svg viewBox="0 0 64 64"><path fill="#2c3e50" d="M12 42a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm40 0a6 6 0 1 0 0 12 6 6 0 0 0 0-12zM16 38h16l8-16h10v-4H38l-8 16H18z"/></svg>`
         };
 
-        // ========== VIEW DATA ==========
-        const viewTitles = {
-            chanDoan: { title: 'Chẩn đoán & Lập trình', icon: 'settings', subtitle: 'Chọn chức năng chẩn đoán' },
-            nhaSanXuat: { title: 'Chọn Nhà sản xuất', icon: 'factory', subtitle: 'Hãng xe được hỗ trợ' },
-            ngonNgu: { title: 'Language | Ngôn ngữ', icon: 'globe', subtitle: 'Chọn ngôn ngữ hiển thị' },
-            mauXeHonda: { title: 'HONDA - Chọn mẫu xe', icon: 'bike', subtitle: 'Danh sách mẫu xe Honda' },
-            traCuu: { title: 'Tra cứu & Tính toán', icon: 'search', subtitle: 'Công cụ tra cứu kỹ thuật' },
-            thongTin: { title: 'Thông tin sản phẩm', icon: 'info', subtitle: 'Thông tin về MOTOSCAN TAB' },
-            thaoTac: { title: 'Thao tác gần nhất', icon: 'history', subtitle: 'Lịch sử thao tác' }
-        };
 
+        // Dữ liệu các màn hình theo chỉ mục tab
         const viewsData = {
             chanDoan: [
-                { id: "obd_conn", title: "Kết nối hệ thống\nOBD trên xe", iconKey: "obd_conn" },
-                { id: "signal_sim", title: "Giả lập & mô phỏng\ntín hiệu", iconKey: "signal_sim" },
+                { id: "obd_conn", title: "Kết nối hệ thống OBD trên xe", iconKey: "obd_conn" },
+                { id: "signal_sim", title: "Giả lập và mô phỏng tín hiệu", iconKey: "signal_sim" },
                 { id: "battery_check", title: "Kiểm tra ắc quy", iconKey: "battery_check" },
-                { id: "power_gen", title: "Kiểm tra phát điện\nvà nạp điện", iconKey: "power_gen" },
-                { id: "ecu_sensor", title: "Kiểm tra ECU\ncảm biến", iconKey: "ecu_sensor" },
+                { id: "power_gen", title: "Kiểm tra phát điện và nạp điện", iconKey: "power_gen" },
+                { id: "ecu_sensor", title: "Kiểm tra ECU, cảm biến", iconKey: "ecu_sensor" },
                 { id: "auto_prog", title: "Lập trình tự động", iconKey: "auto_prog" },
-                { id: "rpm_abs", title: "Đo trực tiếp RPM\nABS / HSTC", iconKey: "rpm_abs" },
-                { id: "smartkey", title: "Smart Key\nLập trình chìa", iconKey: "smartkey" },
-                { id: "ecu_tuner", title: "ECU Tuner\nHiệu chỉnh", iconKey: "ecu_tuner" }
+                { id: "rpm_abs", title: "Đo trực tiếp tốc độ động cơ (RPM), ABS/HSTC", iconKey: "rpm_abs" }
             ],
             nhaSanXuat: [
                 { id: "honda", title: "HONDA", iconKey: "honda" },
                 { id: "yamaha", title: "YAMAHA", iconKey: "yamaha" },
                 { id: "piaggio", title: "PIAGGIO", iconKey: "piaggio" },
                 { id: "sym", title: "SYM", iconKey: "sym" },
-                { id: "kymco", title: "KYMCO", iconKey: "kymco" },
-                { id: "suzuki", title: "SUZUKI", iconKey: "suzuki" }
+                { id: "kymco", title: "KYMCO", iconKey: "kymco" }
             ],
             ngonNgu: [
-                { id: "lang_vi", title: "Tiếng Việt", iconKey: "lang_vi" },
+                { id: "lang_vi", title: "Việt Nam", iconKey: "lang_vi" },
                 { id: "lang_en", title: "English", iconKey: "lang_en" },
                 { id: "lang_fr", title: "Français", iconKey: "lang_fr" },
                 { id: "lang_id", title: "Bahasa Indonesia", iconKey: "lang_id" },
-                { id: "lang_km", title: "ភាសាខ្មែរ (Khmer)", iconKey: "lang_km" },
+                { id: "lang_km", title: "Khmer", iconKey: "lang_km" },
                 { id: "lang_ko", title: "한국어", iconKey: "lang_ko" },
-                { id: "lang_la", title: "ພາສາລາວ (Lao)", iconKey: "lang_la" },
+                { id: "lang_la", title: "Lao", iconKey: "lang_la" },
                 { id: "lang_ms", title: "Bahasa Melayu", iconKey: "lang_ms" }
             ],
             mauXeHonda: [
                 { id: "ab_08_10", title: "AIR BLADE\n(2008 - 2010)", iconKey: "scooter" },
                 { id: "ab_11_12", title: "AIR BLADE\n(2011 - 2012)", iconKey: "scooter" },
-                { id: "ab_13_15", title: "AIR BLADE\n(2013 - 2015)", iconKey: "scooter" },
-                { id: "ab_16_19", title: "AIR BLADE\n(2016 - 2019)", iconKey: "scooter" },
-                { id: "ab_20_24", title: "AIR BLADE\n(2020 - 2024)", iconKey: "scooter" },
-                { id: "sh_mode", title: "SH MODE\n(2013 - 2024)", iconKey: "scooter" },
-                { id: "sh_125_150", title: "SH 125/150i\n(2012 - 2024)", iconKey: "scooter" },
-                { id: "vision", title: "VISION\n(2011 - 2024)", iconKey: "scooter" },
-                { id: "lead", title: "LEAD\n(2008 - 2024)", iconKey: "scooter" },
-                { id: "pcx", title: "PCX 125/150\n(2014 - 2024)", iconKey: "scooter" },
-                { id: "vario", title: "VARIO\n(2015 - 2024)", iconKey: "scooter" },
-                { id: "winner", title: "WINNER X/150\n(2017 - 2024)", iconKey: "scooter" }
-            ],
-            traCuu: [
-                { id: "lookup_code", title: "Tra cứu mã lỗi\nOBD / DTC", iconKey: "lookup" },
-                { id: "calc_tool", title: "Bộ tính toán\nkỹ thuật", iconKey: "calculator" },
-                { id: "wiring_dia", title: "Sơ đồ mạch điện\nECU / SCU / ABS", iconKey: "wiring" }
-            ],
-            thongTin: [
-                { id: "about", title: "Giới thiệu\nMOTOSCAN TAB", iconKey: "info" },
-                { id: "manual_doc", title: "Tài liệu\nhướng dẫn", iconKey: "manual" },
-                { id: "sw_update", title: "Cập nhật\nphần mềm", iconKey: "update" }
-            ],
-            thaoTac: []
+                { id: "ab_18_19", title: "AIR BLADE\n(2018 - 2019)", iconKey: "scooter" },
+                { id: "dylan", title: "DYLAN", iconKey: "scooter" }
+            ]
         };
 
-        // ========== NAVIGATION STACK ==========
-        let navStack = ['chanDoan'];
-        let currentView = 'chanDoan';
 
-        // ========== LOAD VIEW ==========
+        // Hàm tải nội dung Lưới theo chỉ mục tab
         function loadView(viewKey, element) {
             if (element) {
                 document.querySelectorAll('.menu-item').forEach(el => el.classList.remove('active'));
                 element.classList.add('active');
             }
 
-            // Track navigation
-            if (currentView !== viewKey) {
-                navStack.push(viewKey);
-                currentView = viewKey;
-            }
 
             const grid = document.getElementById('gridContent');
-            const header = document.getElementById('contentHeader');
             grid.innerHTML = '';
 
-            // Build header
-            const viewInfo = viewTitles[viewKey] || viewTitles['chanDoan'];
-            header.innerHTML = `
-                <div class="content-header">
-                    <div>
-                        <div class="content-title">
-                            <div class="title-icon">
-                                <svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-                            </div>
-                            ${viewInfo.title}
-                        </div>
-                        <div class="content-subtitle">${viewInfo.subtitle}</div>
-                    </div>
-                </div>
-            `;
 
-            const items = viewsData[viewKey];
+            const items = viewsData[viewKey] || viewsData['chanDoan'];
 
-            if (!items || items.length === 0) {
-                grid.innerHTML = `
-                    <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px; color: var(--text-muted);">
-                        <svg viewBox="0 0 24 24" width="48" height="48" fill="currentColor" style="opacity:0.3; margin-bottom:12px;"><path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></svg>
-                        <div style="font-size:14px; font-weight:600; margin-bottom:4px;">Chưa có thao tác nào</div>
-                        <div style="font-size:12px;">Lịch sử thao tác sẽ hiển thị tại đây</div>
-                    </div>
-                `;
-                return;
-            }
 
-            items.forEach((item, index) => {
+            items.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'card';
-                card.style.animationDelay = `${index * 0.04}s`;
                 card.onclick = () => onCardClick(item.id, item.title, viewKey);
 
+
                 const iconSvg = SVG_ICONS[item.iconKey] || SVG_ICONS['obd_conn'];
+
 
                 card.innerHTML = `
                     <div class="card-icon">${iconSvg}</div>
@@ -978,10 +522,13 @@
             });
         }
 
-        // ========== CARD CLICK HANDLER ==========
-        function onCardClick(id, title, viewKey) {
-            showLog(`[CLICK] ${title.replace('\n', ' ')}`);
 
+        // Xử lý sự kiện click vào các Ô chức năng (Để gán thuật toán sau này)
+        function onCardClick(id, title, viewKey) {
+            showLog(`[CLICK] ID: ${id} | Title: ${title.replace('\n', ' ')}`);
+
+
+            // Luồng chuyển hướng demo
             if (viewKey === 'nhaSanXuat' && id === 'honda') {
                 loadView('mauXeHonda');
             } else {
@@ -993,47 +540,18 @@
             }
         }
 
-        // ========== NAVIGATION ==========
-        function goBack() {
-            if (navStack.length > 1) {
-                navStack.pop();
-                const prevView = navStack[navStack.length - 1];
-                currentView = prevView;
-
-                // Find and activate corresponding menu item
-                const menuMap = {
-                    chanDoan: 'menu-chandoan',
-                    thaoTac: 'menu-thaotac',
-                    traCuu: 'menu-tracuu',
-                    thongTin: 'menu-thongtin',
-                    nhaSanXuat: 'menu-nhasanxuat',
-                    ngonNgu: 'menu-ngonngu'
-                };
-
-                const menuId = menuMap[prevView];
-                const menuEl = menuId ? document.getElementById(menuId) : null;
-                if (menuEl) {
-                    document.querySelectorAll('.menu-item').forEach(el => el.classList.remove('active'));
-                    menuEl.classList.add('active');
-                }
-
-                loadView(prevView);
-                navStack.push(prevView); // loadView pushes, so we compensate
-            }
-        }
-
-        function goHome() {
-            navStack = ['chanDoan'];
-            currentView = 'chanDoan';
-            const firstMenuItem = document.getElementById('menu-chandoan');
-            loadView('chanDoan', firstMenuItem);
-        }
 
         function triggerAction(actionName) {
             showLog(`[ACTION] ${actionName}`);
         }
 
-        // ========== LOG OVERLAY ==========
+
+        function goHome() {
+            const firstMenuItem = document.querySelector('.menu-item');
+            loadView('chanDoan', firstMenuItem);
+        }
+
+
         function showLog(text) {
             const logBox = document.getElementById('log-overlay');
             logBox.innerText = text;
@@ -1041,24 +559,14 @@
             clearTimeout(window.logTimer);
             window.logTimer = setTimeout(() => {
                 logBox.style.display = 'none';
-            }, 2500);
+            }, 3000);
         }
 
-        // ========== CLOCK ==========
-        function updateClock() {
-            const now = new Date();
-            const h = String(now.getHours()).padStart(2, '0');
-            const m = String(now.getMinutes()).padStart(2, '0');
-            document.getElementById('clock').textContent = `${h}:${m}`;
-        }
 
-        // ========== INIT ==========
+        // Tải mặc định màn hình Chẩn đoán khi mở trang
         window.onload = () => {
             loadView('chanDoan');
-            updateClock();
-            setInterval(updateClock, 30000);
         };
     </script>
 </body>
 </html>
-
